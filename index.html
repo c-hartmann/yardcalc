@@ -1,0 +1,122 @@
+<!doctype html />
+<html lang="de-DE" />
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content="Sailing, Yardstick, Calculator, Time" />
+		<meta name="description" content="A minimal sailed time calculator for german Yardstick sailors" />
+		<meta name="author" content="Christian Hartmann" />
+		<meta name="copyright" content="Christian Hartmann" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="yardcalc.css" />
+		<link rel="stylesheet" href="yardcalc-custom.css" />
+<!-- 		<link rel="stylesheet" href="ysapp-custom.css" /> -->
+<!-- 		<base href="https://re-think-it.com/ysapp/" target="_blank" /> -->
+		<link rel="manifest" href="manifest.json" />
+		<title>Mein kleiner Yardstick Rechner</title>
+	</head>
+
+	<style>
+		:any-link {
+			text-decoration: none;
+		}
+	</style>
+
+	<body>
+
+		<header>
+			<h1>YardCalc</h1>
+		</header>
+
+		<nav>
+			<!-- there is no navigation here -->
+		</nav>
+
+		<main>
+
+			<section id="times-display">
+				<div id="time-sailed">
+					<div class="output-label">Zeit Gesegelt:</div> <output class="output-value">00:00:00</output>
+				</div>
+				<div id="time-calculated">
+					<div class="output-label">Zeit Berechnet:</div> <output class="output-value">00:00:00</output>
+				</div>
+			</section>
+
+			<section id="time-inputs" class="inputs">
+				<form>
+					<div class="range_input_container" min="0" max="10" >
+						<input class="range_input" id="hours_input" type="range" name="hours_input" min="0" max="10" step="1" value="1" />
+					</div>
+					<div class="range_input_container" min="0" max="90" >
+						<input class="range_input" id="minutes_input" type="range" name="hours_input" min="0" max="90" step="1" value="1" />
+					</div>
+					<div class="range_input_container" min="0" max="59" >
+						<input class="range_input" id="seconds_input" type="range" name="hours_input" min="0" max="59" step="1" value="1" />
+					</div>
+				</form>
+			</section>
+
+			<section id="yardstick-display">
+				<div id="yardstick-number">
+					<div class="output-label">Yardstickzahl:</div> <output class="output-value">80</output>
+				</div>
+			</section>
+
+			<section id="yardstick-input" class="inputs">
+				<form>
+					<div class="range_input_container" min="80" max="120" >
+						<input class="range_input" id="yardstick_input" type="range" name="yardstick_input" min="80" max="120" step="1" value="1" />
+					</div>
+				</form>
+			</section>
+
+		</main>
+
+		<sidebar>
+			<!-- there is no sidebar here -->
+		</sidebar>
+
+		<footer>
+			<a id="share-button-whatsapp" href="whatsapp://send?text=dummytext">
+				<!--  SVG source: hhttps://iconduck.com/icons/4484/whatsapp License: CC0 -->
+				<svg height="24" viewBox="0 0 24 24" width="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path clip-rule="evenodd" d="m18.403 5.633c-1.695-1.697-3.949-2.632-6.35-2.633-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488l-1.273 4.651 4.759-1.249c1.312.715 2.788 1.092 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977 0-2.398-.932-4.653-2.627-6.35m-6.35 13.812h-.003c-1.339-.001-2.652-.36-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282c-.747-1.188-1.141-2.561-1.141-3.971.002-4.114 3.349-7.461 7.465-7.461 1.993.001 3.866.778 5.275 2.188 1.408 1.411 2.184 3.285 2.183 5.279-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393s.149-.224.224-.374.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383-.13-.006-.28-.008-.429-.008-.15 0-.393.056-.599.28-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321 1.582 2.415 3.832 3.387c.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066s.187-.973.131-1.067-.207-.151-.43-.263" fill-rule="evenodd" stroke="currentColor" stroke-width="0.5" />
+				</svg>
+			</a>
+			<a id="share-button-android" href="" onclick="shareThis();" />
+			<!-- SVG source: https://iconduck.com/icons/125155/share-android, License: MIT -->
+			<svg width="24" height="24" stroke-width="1.5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M15.5 6.5L8.5 10.5" stroke="currentColor" stroke-width="1.5" />
+				<path d="M8.5 13.5L15.5 17.5" stroke="currentColor" stroke-width="1.5" />
+			</svg>
+			</a>
+			<p id="copyright-notice"><small>© copyright 2024 by and support from: <a href="hartmann.christian@gmail.com">christian hartmann</a>. All rights reversed.</small></p>
+			<p id="version-notice"><small>version: 2024-08-18</small></p>
+		</footer>
+
+
+
+
+		<script src="yardcalc.js"></script>
+		<script>
+			/* initialize sailed and calculated times in header */
+			// TODO
+			/* attach sharing to android button */
+			const share_button_android = document.querySelector('#share-button-android');
+			if ( webShareApiAvailable() ) {
+				share_button_android.addEventListener('click',() => {
+					shareThis();
+				});
+			} else {
+				share_button_android.disabled = true;
+			}
+		</script>
+
+	</body>
+
+</html>

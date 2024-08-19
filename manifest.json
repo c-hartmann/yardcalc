@@ -1,0 +1,11 @@
+{
+	"name": "Yardstick Calculator",
+    "short_name": "YSCAL",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "start_url": "/PWA-TodoApp/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "author": "Christian Ulrich Hartmann",
+    "default_locale": "de"
+}
